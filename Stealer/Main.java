@@ -23,7 +23,7 @@ public class Main {
 			bufferedReader.close();
 		}
 		for(String s : arr) {
-			System.out.println(s);
+			System.out.println(s); // token
 		}
 	}
 
