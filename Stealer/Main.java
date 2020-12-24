@@ -17,13 +17,14 @@ public class Main {
 			while ((strLine = bufferedReader.readLine()) != null && s.endsWith("ldb")) {
 				while ((strLine.indexOf("oken")) != -1) {
 					strLine = strLine.substring(strLine.indexOf("oken") + "oken".length());
-					if ((strLine.split("\"")[1]).length() > 8) arr.add("Token : "+strLine.split("\"")[1]);
+					String bulunanToken = strLine.split("\"")[1];
+					if (bulunanToken.length() > 8 && !arr.contains(bulunanToken)) arr.add("Token : "+bulunanToken);
 				}
 			}
 			bufferedReader.close();
 		}
 		for(String s : arr) {
-			System.out.println(s); // token
+			System.out.println(s); // bulunan tokenleri disariya cikti olarak yazar.
 		}
 	}
 
